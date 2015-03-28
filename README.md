@@ -1,4 +1,4 @@
-# Seo
+# seo-meta-tags
 
 A helper that allows you to write meta tags for SEO purposes. If you set the same tag twice, the later defined tag will override.
 
