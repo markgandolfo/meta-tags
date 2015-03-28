@@ -20,7 +20,7 @@ module Seo
         if property == 'title'
           output << content_tag(:title, content)
         else
-          output << tag(:meta, content: content, property: property)
+          output << tag(:meta, property: property, content: content)
         end
       end
 

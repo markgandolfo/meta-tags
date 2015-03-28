@@ -14,7 +14,7 @@ describe Seo do
       subject.set_meta('description', 'a description')
       output = subject.meta_tags
 
-      expect(output).to eq("<meta content=\"a description\" property=\"description\" />")
+      expect(output).to eq("<meta property=\"description\" content=\"a description\" />")
     end
 
     it 'should overwrite tags with the same property' do
@@ -22,7 +22,7 @@ describe Seo do
       subject.set_meta('description', 'a new description')
       output = subject.meta_tags
 
-      expect(output).to eq("<meta content=\"a new description\" property=\"description\" />")
+      expect(output).to eq("<meta property=\"description\" content=\"a new description\" />")
     end
   end
 
