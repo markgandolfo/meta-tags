@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'seo/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "seo-meta-tag"
+  spec.name          = "seo-meta-tags"
   spec.version       = Seo::VERSION
   spec.authors       = ["Mark Gandolfo"]
   spec.email         = ["mark@gandolfo.com.au"]
