@@ -1,4 +1,4 @@
-require "seo/version"
+require 'seo/version'
 require 'seo/tag_helper'
 
 module Seo
@@ -6,4 +6,3 @@ module Seo
 end
 
 ActionView::Base.send :include, Seo
-
