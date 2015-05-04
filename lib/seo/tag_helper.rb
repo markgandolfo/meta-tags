@@ -12,20 +12,31 @@ module Seo
       @tags[property] = content
     end
 
-    def meta_tags(og:true)
-      @tags ||= {}
-      output = "";
+    def build_meta_tags(tags)
+      output = ''
 
-      @tags.each do |property, content|
-        if property == 'title'
+      tags.each do |property, content|
+        if property.start_with? 'title'
           output << content_tag(:title, content)
         else
           output << tag(:meta, property: property, content: content)
         end
       end
 
+      output
+    end
+
+    def meta_tags(og:true)
+      @tags ||= {}
+
+      output = build_meta_tags(@tags)
+
+      if og
+        @og_tags = Hash[@tags.map { |tag, value| ["og:#{tag}", value] }]
+        output << build_meta_tags(@og_tags)
+      end
+
       output.html_safe
     end
   end
 end
-
